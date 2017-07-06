@@ -1,0 +1,21 @@
+{
+  "name": "1-node-app",
+  "version": "1.0.0",
+  "description": "first node app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "first",
+    "node",
+    "with",
+    "express",
+    "app"
+  ],
+  "author": "Kemal Cholovich",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
