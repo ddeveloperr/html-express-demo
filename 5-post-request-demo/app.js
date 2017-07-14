@@ -1,18 +1,24 @@
 var express = require("express");
 var app = express();
+var bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({extended: true} ));
 
 app.set("view engine" , "ejs");
+
+var friends = ["Friend 1","Friend 2","Friend 3","Friend 4"];
 
 app.get("/", function(req, res){
     res.render("home");
 });
 
-app.get("/addfriend", function(req, res){
-    res.send("post route");
+app.post("/addfriend", function(req, res){
+    var newFriend = req.body.newfriend;
+    friends.push(newFriend);
+    res.redirect("/friends");
 });
 
 app.get("/friends", function(req, res){
-    var friends = ["Friend 1","Friend 2","Friend 3","Friend 4"];
     res.render("friends", {friends: friends});
 });
 
